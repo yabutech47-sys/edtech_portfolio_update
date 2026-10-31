@@ -1,139 +1,180 @@
-const initiatives = [
+"use client";
+
+import Image from "next/image";
+
+const expertiseAreas = [
   {
-    title: "Teacher Development",
-    tagline: "Empowering educators with 21st-century skills",
+    number: "01",
+    title: "Teacher Professional Development & EdTech Training",
     description:
-      "Comprehensive digital literacy and pedagogy training programs for in-service and pre-service teachers across Ethiopia, reaching every woreda.",
-    image: (
-      <svg className="w-full h-full" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="240" fill="#E5E3DF" />
-        <circle cx="140" cy="100" r="36" fill="#C4C0BA" />
-        <rect x="92" y="155" width="96" height="50" rx="6" fill="#B0ACA6" />
-        <rect x="220" y="60" width="140" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="220" y="80" width="120" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="220" y="100" width="100" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="220" y="130" width="130" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="220" y="150" width="110" height="8" rx="4" fill="#C4C0BA" />
-      </svg>
-    ),
-    color: "from-primary to-primary-light",
+      "Strengthening teachers' digital and pedagogical competencies through both face-to-face and online professional development programs.",
+    courses: [
+      "EdTech Foundations",
+      "EdTech Integration and Application",
+      "Technology Leadership & School Management",
+      "Artificial Intelligence (AI) for Teaching & Learning",
+      "Blended and Hybrid Teaching Approaches",
+      "Customized institutional training programs",
+    ],
+    photo: "/gallery/hero_photo_18.png",
+    photoCaption: "EdTech Foundation Training at Testimony Centre, Addis Ababa",
+    accentBg: "bg-blue-500",
+    badgeColor: "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-sky-300",
   },
   {
-    title: "Digital Textbooks",
-    tagline: "Interactive, curriculum-aligned content",
+    number: "02",
+    title: "Child Protection and Youth Engagements",
     description:
-      "Creating and deploying interactive digital textbooks for secondary education, aligned with the national curriculum and available in multiple local languages.",
-    image: (
-      <svg className="w-full h-full" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="240" fill="#E5E3DF" />
-        <rect x="40" y="36" width="200" height="170" rx="6" fill="#FFF" stroke="#C4C0BA" strokeWidth="2" />
-        <rect x="50" y="56" width="180" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="72" width="160" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="88" width="170" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="108" width="140" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="128" width="150" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="152" width="100" height="6" rx="3" fill="#C4C0BA" />
-        <circle cx="140" cy="180" r="10" fill="#D97706" />
-        <rect x="270" y="60" width="90" height="120" rx="6" fill="#FFF" stroke="#C4C0BA" strokeWidth="2" />
-        <rect x="278" y="76" width="74" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="278" y="90" width="60" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="278" y="104" width="66" height="6" rx="3" fill="#C4C0BA" />
-      </svg>
-    ),
-    color: "from-accent to-accent-dark",
+      "Integrating digital child protection, safeguarding, student leadership, and climate change action into the heart of community and school interventions.",
+    courses: [
+      "Digital Safeguarding & Online Child Protection frameworks",
+      "Climate Change initiatives (1,000+ youth with Kaizen / USAID)",
+      "Student Leadership showcase sessions across 10 schools",
+      "Social Behavioral Change Communication (SBCC) multimedia",
+    ],
+    photo: "/gallery/hero_photo_16.png",
+    photoCaption: "Student Leadership & Climate Showcase Event in Addis Ababa",
+    accentBg: "bg-emerald-500",
+    badgeColor: "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
   },
   {
-    title: "Youth Engagement",
-    tagline: "Building the next generation of digital leaders",
+    number: "03",
+    title: "Digital Learning Content & Interactive Course Development",
     description:
-      "After-school coding clubs, digital entrepreneurship bootcamps, and STEM competitions designed to equip Ethiopian youth with future-ready skills.",
-    image: (
-      <svg className="w-full h-full" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="240" fill="#E5E3DF" />
-        <circle cx="120" cy="90" r="28" fill="#C4C0BA" />
-        <rect x="86" y="138" width="68" height="40" rx="6" fill="#B0ACA6" />
-        <circle cx="220" cy="110" r="22" fill="#C4C0BA" />
-        <rect x="198" y="148" width="44" height="28" rx="5" fill="#B0ACA6" />
-        <circle cx="300" cy="95" r="20" fill="#C4C0BA" />
-        <rect x="280" y="130" width="40" height="24" rx="4" fill="#B0ACA6" />
-        <rect x="40" y="190" width="320" height="4" rx="2" fill="#C4C0BA" />
-        <rect x="40" y="200" width="160" height="4" rx="2" fill="#D97706" />
-      </svg>
-    ),
-    color: "from-emerald-600 to-emerald-700",
+      "Learner-centered instructional design combined with multimedia and AI technologies to create engaging digital courseware and interactive textbooks.",
+    courses: [
+      "Over 50 interactive digital courses (UNESCO, EDIFY, MoE, CHADET)",
+      "Interactive videos, simulations, quizzes & gamified activities",
+      "Offline interactive digital textbooks (Somali REB, Oromia REB, Elixir)",
+      "AI embedded for immediate student & trainee feedback",
+    ],
+    photo: "/gallery/hero_photo_24.png",
+    photoCaption: "Content Co-Creation Workshop with the MoE, Adama Ethiopia",
+    accentBg: "bg-sky-500",
+    badgeColor: "bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300",
   },
   {
-    title: "Capacity Building",
-    tagline: "Strengthening institutional systems",
+    number: "04",
+    title: "Institutional Capacity Building & Professional Development",
     description:
-      "Working with government ministries, regional education bureaus, and higher education institutions to build sustainable digital education infrastructure.",
-    image: (
-      <svg className="w-full h-full" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="240" fill="#E5E3DF" />
-        <rect x="60" y="100" width="80" height="90" rx="4" fill="#C4C0BA" />
-        <rect x="68" y="80" width="64" height="24" rx="4" fill="#B0ACA6" />
-        <rect x="155" y="120" width="80" height="70" rx="4" fill="#C4C0BA" />
-        <rect x="163" y="100" width="64" height="24" rx="4" fill="#B0ACA6" />
-        <rect x="250" y="90" width="80" height="100" rx="4" fill="#C4C0BA" />
-        <rect x="258" y="70" width="64" height="24" rx="4" fill="#B0ACA6" />
-        <rect x="60" y="190" width="280" height="4" rx="2" fill="#D97706" />
-      </svg>
-    ),
-    color: "from-violet-600 to-violet-700",
+      "Equipping the educational and civil workforce from teachers to institutional leaders with 21st-century leadership and management competencies.",
+    courses: [
+      "Over 10,000 professionals trained nationwide",
+      "Co-developed national modules reaching 100,000+ secondary teachers",
+      "Cross-sectoral leadership & data-driven decision-making",
+      "Female School Leaders Capacity Building in Adama",
+    ],
+    photo: "/gallery/hero_photo_26.png",
+    photoCaption: "Female School Leaders Capacity Building, Adama Ethiopia",
+    accentBg: "bg-indigo-500",
+    badgeColor: "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300",
+  },
+  {
+    number: "05",
+    title: "Digital Systems and Technology Platforms",
+    description:
+      "Customized digital infrastructure engineered to scale learning across various contexts, including low-connectivity and offline areas.",
+    courses: [
+      "Custom Learning & Management Systems (LMS) for tracking & delivery",
+      "AI-Enabled social solutions for automated feedback & knowledge",
+      "Offline AI integration at school and individual teacher level",
+      "Mobile outreach via Telegram bots and low-bandwidth apps",
+    ],
+    photo: "/gallery/hero_photo_28.png",
+    photoCaption: "AAU, Faculty of Education Session",
+    accentBg: "bg-cyan-500",
+    badgeColor: "bg-cyan-100 text-cyan-700 dark:bg-cyan-950 dark:text-cyan-300",
+  },
+  {
+    number: "06",
+    title: "Educational Media Production & Multimedia for Social Change",
+    description:
+      "Our fully-equipped production studio produces high-impact advocacy media, animations, training videos, and multilingual educational publishing.",
+    courses: [
+      "Documentaries, animations, and training videos on social issues",
+      "Climate change, child rights, and protection advocacy",
+      "Inclusive publishing of children's books in multiple local languages",
+      "Culturally relevant and accessible educational multimedia",
+    ],
+    photo: "/gallery/hero_photo_20.jpg",
+    photoCaption: "Digital Content Production & Teacher Empowerment Hub",
+    accentBg: "bg-amber-500",
+    badgeColor: "bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
   },
 ];
 
 export default function CoreInitiatives() {
   return (
-    <section className="py-20 sm:py-24">
+    <section id="expertise" className="py-20 sm:py-28 bg-[#f5f8fc] dark:bg-[#09131f] border-b border-slate-200 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider rounded-full">
-            Our Programs
-          </span>
-          <h2 className="mt-4 font-heading text-3xl sm:text-4xl font-bold text-primary-dark">
-            Core Initiatives
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-[#0f4c81] dark:text-sky-300 text-xs font-bold uppercase tracking-wider border border-blue-200 dark:border-blue-900">
+            What We Do
+          </div>
+          <h2 className="mt-3 font-sans text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+            Key Areas of Expertise
           </h2>
-          <p className="mt-3 text-muted-text max-w-2xl mx-auto">
-            Four interconnected program areas driving systemic change in
-            Ethiopia&apos;s education landscape.
+          <p className="mt-3 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Our work is grounded in technological innovation, ensuring that educational stakeholders are reached through both digital and grassroots strategies.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
-          {initiatives.map((init) => (
-            <article
-              key={init.title}
-              className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-warm-gray-dark"
+
+        {/* 6 Key Areas Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {expertiseAreas.map((area) => (
+            <div
+              key={area.number}
+              className="bg-white dark:bg-[#0f1e31] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-xl hover:border-blue-500 transition-all duration-300 flex flex-col justify-between group"
             >
-              <div className="relative h-48 sm:h-52 overflow-hidden bg-warm-gray">
-                <div className="absolute inset-0">{init.image}</div>
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t ${init.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
+              {/* Photo Header */}
+              <div className="relative h-48 w-full overflow-hidden bg-slate-900">
+                <Image
+                  src={area.photo}
+                  alt={area.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
-              <div className="p-6 sm:p-8">
-                <span
-                  className={`inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${init.color} text-white`}
-                >
-                  {init.tagline}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <span className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-md text-xs font-black text-white ${area.accentBg}`}>
+                  {area.number}
                 </span>
-                <h3 className="mt-3 font-heading text-xl font-bold text-primary-dark group-hover:text-primary transition-colors">
-                  {init.title}
-                </h3>
-                <p className="mt-2 text-muted-text text-sm leading-relaxed">
-                  {init.description}
-                </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-flex items-center text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
-                >
-                  Learn more
-                  <svg className="ml-1.5 w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+                <span className="absolute bottom-2.5 left-3 right-3 text-[11px] text-white/90 font-medium truncate">
+                  {area.photoCaption}
+                </span>
               </div>
-            </article>
+
+              {/* Body */}
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-sans text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-blue-600 dark:group-hover:text-sky-400 transition-colors">
+                    {area.title}
+                  </h3>
+                  <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    {area.description}
+                  </p>
+
+                  <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                      Key Programs & Deliverables:
+                    </span>
+                    <ul className="space-y-1.5">
+                      {area.courses.map((c) => (
+                        <li key={c} className="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-2">
+                          <span className="text-blue-500 font-bold shrink-0 mt-0.5">•</span>
+                          <span>{c}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-sky-400">
+                  <span>Learn more</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

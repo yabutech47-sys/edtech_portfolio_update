@@ -1,23 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Ethiopia EdTech | Transforming Education Through Digital Innovation",
+  title: "EdTech Hub ET | Transforming Education Through Digital Innovation",
   description:
-    "Transforming education and training through innovative digital technologies across Ethiopia.",
+    "A pioneering social enterprise established in 2021 empowering educators, institutions, and learners with scalable digital education solutions across Ethiopia. Technology in the hands of good teacher transforms education!",
 };
 
 export default function RootLayout({
@@ -26,11 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${inter.variable} scroll-smooth`}
-    >
-      <body className="font-body bg-off-white text-dark-text antialiased">
+    <html lang="en" className="scroll-smooth" data-theme="light">
+      <body className="font-sans bg-[var(--bg-page)] text-[var(--text-main)] antialiased transition-colors duration-200 min-h-screen flex flex-col">
         {children}
       </body>
     </html>

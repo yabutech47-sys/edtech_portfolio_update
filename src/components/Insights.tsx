@@ -1,171 +1,129 @@
-const posts = [
+"use client";
+
+import Image from "next/image";
+
+interface NewsItem {
+  id: string;
+  category: string;
+  title: string;
+  date: string;
+  image: string;
+  excerpt: string;
+  partner: string;
+}
+
+const newsItems: NewsItem[] = [
   {
-    category: "Report",
-    title: "State of Digital Education in Ethiopia 2025",
+    id: "news-1",
+    category: "Workshop",
+    title: "Content Co-Creation Workshop with the Ministry of Education in Adama",
+    date: "Adama, Ethiopia",
+    image: "/gallery/hero_photo_24.png",
     excerpt:
-      "A comprehensive analysis of technology adoption across Ethiopia's secondary education system, with key recommendations for policymakers.",
-    image: (
-      <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <rect width="400" height="260" fill="#E5E3DF" />
-        <rect x="24" y="24" width="352" height="176" rx="8" fill="#FFF" stroke="#C4C0BA" strokeWidth="1.5" />
-        <rect x="40" y="44" width="100" height="8" rx="4" fill="#0f3b5e" />
-        <rect x="40" y="60" width="200" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="40" y="76" width="170" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="40" y="96" width="220" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="40" y="112" width="180" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="40" y="132" width="160" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="40" y="156" width="100" height="8" rx="4" fill="#D97706" />
-        <rect x="24" y="216" width="108" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="148" y="216" width="80" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="24" y="240" width="140" height="6" rx="3" fill="#C4C0BA" />
-      </svg>
-    ),
-    date: "Jun 15, 2025",
-    readTime: "12 min read",
+      "Educators, instructional designers, and policymakers collaborated in Adama to develop over 50 interactive digital courses aligned with the national curriculum.",
+    partner: "Ministry of Education & UNESCO",
   },
   {
-    category: "Case Study",
-    title: "How Regional Teacher Training Hubs Are Transforming Classrooms",
+    id: "news-2",
+    category: "Teacher Training",
+    title: "EdTech Foundation Training at Testimony Centre, Addis Ababa",
+    date: "Addis Ababa",
+    image: "/gallery/hero_photo_18.png",
     excerpt:
-      "Lessons from our pilot program across four regions, where teacher training hubs have improved student outcomes by 40% in the first year.",
-    image: (
-      <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <rect width="400" height="260" fill="#E5E3DF" />
-        <circle cx="140" cy="104" r="40" fill="#C4C0BA" />
-        <rect x="92" y="160" width="96" height="56" rx="6" fill="#B0ACA6" />
-        <rect x="240" y="70" width="120" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="240" y="90" width="100" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="240" y="110" width="110" height="8" rx="4" fill="#C4C0BA" />
-        <rect x="240" y="140" width="90" height="8" rx="4" fill="#D97706" />
-        <rect x="24" y="228" width="108" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="148" y="228" width="80" height="6" rx="3" fill="#C4C0BA" />
-      </svg>
-    ),
-    date: "May 28, 2025",
-    readTime: "8 min read",
+      "Hands-on professional development equipping teachers with digital competencies, classroom technology leadership, and artificial intelligence for learning.",
+    partner: "Testimony Centre",
   },
   {
-    category: "Blog Post",
-    title: "Bridging the Digital Divide: One Tablet at a Time",
+    id: "news-3",
+    category: "Interactive Textbooks",
+    title: "Offline Interactive Digital Textbooks for Somali and Oromia Regions",
+    date: "Regional Deployments",
+    image: "/gallery/hero_photo_39.jpg",
     excerpt:
-      "Meet Tigist, a 16-year-old student from the Somali Region who discovered a passion for coding through our after-school digital club.",
-    image: (
-      <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <rect width="400" height="260" fill="#E5E3DF" />
-        <rect x="80" y="40" width="160" height="180" rx="8" fill="#FFF" stroke="#C4C0BA" strokeWidth="2" />
-        <rect x="96" y="60" width="128" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="96" y="76" width="110" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="96" y="92" width="100" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="96" y="116" width="80" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="96" y="136" width="90" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="96" y="160" width="60" height="6" rx="3" fill="#D97706" />
-        <circle cx="160" cy="194" r="10" fill="#C4C0BA" />
-        <rect x="270" y="60" width="24" height="140" rx="4" fill="#B0ACA6" />
-        <rect x="270" y="46" width="24" height="14" rx="3" fill="#C4C0BA" />
-        <rect x="24" y="228" width="108" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="148" y="228" width="80" height="6" rx="3" fill="#C4C0BA" />
-      </svg>
-    ),
-    date: "Apr 10, 2025",
-    readTime: "5 min read",
+      "Transforming early-grade national textbooks into fully functional offline digital learning content, ensuring seamless access in low-connectivity areas.",
+    partner: "Somali REB, Oromia REB & Elixir",
   },
   {
-    category: "Policy Brief",
-    title: "Recommendations for the National Digital Education Strategy",
+    id: "news-4",
+    category: "Youth Leadership",
+    title: "Climate Change & Digital Safeguarding Showcase Across 10 Schools",
+    date: "Addis Ababa Showcases",
+    image: "/gallery/hero_photo_16.png",
     excerpt:
-      "Our policy recommendations for Ethiopia's Ministry of Education on infrastructure investment, teacher training, and content localization.",
-    image: (
-      <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <rect width="400" height="260" fill="#E5E3DF" />
-        <rect x="30" y="40" width="340" height="190" rx="8" fill="#FFF" stroke="#C4C0BA" strokeWidth="1.5" />
-        <rect x="50" y="60" width="60" height="8" rx="4" fill="#0f3b5e" />
-        <rect x="50" y="80" width="280" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="96" width="240" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="116" width="260" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="140" width="200" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="160" width="220" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="50" y="184" width="140" height="6" rx="3" fill="#D97706" />
-        <rect x="30" y="240" width="108" height="6" rx="3" fill="#C4C0BA" />
-        <rect x="154" y="240" width="80" height="6" rx="3" fill="#C4C0BA" />
-      </svg>
-    ),
-    date: "Mar 22, 2025",
-    readTime: "15 min read",
+      "Over 1,000 young leaders showcased community advocacy projects, digital child protection tools, and environmental initiatives in partnership with Kaizen (USAID).",
+    partner: "Kaizen (USAID) & 10 Schools",
   },
 ];
 
 export default function Insights() {
   return (
-    <section className="py-20 sm:py-24 bg-warm-gray">
+    <section id="news" className="py-20 sm:py-28 bg-[#f5f8fc] dark:bg-[#09131f] border-b border-slate-200 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
           <div>
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider rounded-full">
-              Resource Library
-            </span>
-            <h2 className="mt-4 font-heading text-3xl sm:text-4xl font-bold text-primary-dark">
-              Latest Insights
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-[#0f4c81] dark:text-sky-300 text-xs font-bold uppercase tracking-wider border border-blue-200 dark:border-blue-900">
+              News & Updates
+            </div>
+            <h2 className="mt-3 font-sans text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+              Latest Insights & Stories
             </h2>
-            <p className="mt-2 text-muted-text">
-              Research, stories, and analysis driving education innovation in
-              Ethiopia.
+            <p className="mt-3 text-base text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+              Discover how our training programs, interactive digital content, and community initiatives are transforming education across Ethiopia.
             </p>
           </div>
+
           <a
-            href="#"
-            className="inline-flex items-center px-5 py-2.5 border-2 border-primary text-primary hover:bg-primary hover:text-white text-sm font-semibold rounded-lg transition-colors shrink-0"
+            href="/EdTech_Hub_ET_Company_Profile.pdf"
+            download="EdTech_Hub_ET_Company_Profile.pdf"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-blue-500 text-sm font-semibold text-[#0f4c81] dark:text-sky-300 transition-colors shadow-xs shrink-0"
           >
-            View All Resources
-            <svg
-              className="ml-2 w-3.5 h-3.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <span>Download Full Profile (PDF)</span>
+            <span>↓</span>
           </a>
         </div>
+
+        {/* News Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {posts.map((post) => (
+          {newsItems.map((item) => (
             <article
-              key={post.title}
-              className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-warm-gray-dark flex flex-col"
+              key={item.id}
+              className="bg-white dark:bg-[#0f1e31] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 flex flex-col justify-between group"
             >
-              <div className="relative h-44 overflow-hidden bg-warm-gray">
-                {post.image}
-                <span className="absolute top-3 left-3 px-2.5 py-1 bg-white/90 backdrop-blur-sm text-primary-dark text-[11px] font-bold uppercase tracking-wider rounded">
-                  {post.category}
-                </span>
-              </div>
-              <div className="p-5 flex flex-col flex-1">
-                <div className="flex items-center gap-3 text-xs text-muted-text mb-2">
-                  <span>{post.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-warm-gray-dark" />
-                  <span>{post.readTime}</span>
+              <div>
+                <div className="relative h-48 w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                  <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-md bg-[#0f4c81] text-white text-[11px] font-bold">
+                    {item.category}
+                  </span>
                 </div>
-                <h3 className="font-heading text-base font-bold text-primary-dark group-hover:text-primary transition-colors leading-snug">
-                  {post.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-text leading-relaxed flex-1 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-flex items-center text-xs font-semibold text-accent hover:text-accent-dark transition-colors uppercase tracking-wider"
-                >
-                  Read more
-                  <svg
-                    className="ml-1.5 w-3 h-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+
+                <div className="p-5">
+                  <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-2 font-medium">
+                    <span>{item.date}</span>
+                    <span className="text-blue-600 dark:text-sky-400 font-semibold">{item.partner}</span>
+                  </div>
+
+                  <h3 className="font-sans text-base font-bold text-slate-900 dark:text-white leading-snug group-hover:text-blue-600 dark:group-hover:text-sky-400 transition-colors">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">
+                    {item.excerpt}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-5 pt-0">
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-sky-400 group-hover:underline">
+                  Read more →
+                </span>
               </div>
             </article>
           ))}
