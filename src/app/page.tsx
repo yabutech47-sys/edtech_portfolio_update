@@ -29,7 +29,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero onOpenInquiry={() => handleOpenInquiry()} />
         <AboutUs />
-        <CoreInitiatives />
+        <CoreInitiatives onSelectExpertise={(title) => handleOpenInquiry(title)} />
         <ProjectsDirectory onSelectProject={(projectTitle) => handleOpenInquiry(projectTitle)} />
         <ImpactMetrics />
         <Insights />
@@ -38,6 +38,7 @@ export default function Home() {
       <Footer onOpenInquiry={() => handleOpenInquiry()} />
 
       <ConsultationModal
+        key={selectedService || "default"}
         isOpen={modalOpen}
         onClose={() => {
           setModalOpen(false);

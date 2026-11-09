@@ -137,12 +137,10 @@ export default function Footer({ onOpenInquiry }: FooterProps) {
             <div className="space-y-3 text-xs text-slate-400">
               <div>
                 <span className="text-white font-medium block">Phone:</span>
-                <a href="tel:+251911816762" className="hover:text-sky-300 block">
-                  +251 911 816 762
+                <a href="tel:+251992878977" className="hover:text-sky-300 block">
+                  +251992878977
                 </a>
-                <a href="tel:+251921160805" className="hover:text-sky-300 block">
-                  +251 921 160 805
-                </a>
+              
               </div>
               <div>
                 <span className="text-white font-medium block">Email:</span>

@@ -62,7 +62,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             >
               <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-blue-50/80 dark:bg-slate-850 border border-blue-200/80 dark:border-slate-700 p-1 flex items-center justify-center shadow-xs group-hover:border-blue-600 transition-colors">
                 <Image
-                  src="/logo.png"
+                  src="/gallery/LogoFinal.png"
                   alt="EdTech Hub ET Logo"
                   width={38}
                   height={38}
@@ -85,37 +85,37 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             {/* Desktop Navigation Links - Compact & Clean Single Line */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-8 font-medium text-sm text-slate-700 dark:text-slate-200">
               <Link
-                href="#about"
+                href="/about"
                 className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
               >
                 About Us
               </Link>
               <Link
-                href="#expertise"
+                href="/#expertise"
                 className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
               >
                 Expertise
               </Link>
               <Link
-                href="#projects"
+                href="/#projects"
                 className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
               >
                 Projects
               </Link>
               <Link
-                href="#impact"
+                href="/#impact"
                 className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
               >
                 Impact
               </Link>
               <Link
-                href="#partners"
+                href="/#partners"
                 className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
               >
                 Partners
               </Link>
               <Link
-                href="#contact"
+                href="/#contact"
                 className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
               >
                 Contact
@@ -171,42 +171,42 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
           <div className="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0c1827] px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200 shadow-xl">
             <div className="space-y-1 font-medium text-sm text-slate-800 dark:text-slate-200">
               <Link
-                href="#about"
+                href="/about"
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-md hover:bg-blue-50 dark:hover:bg-slate-800"
               >
                 About Us
               </Link>
               <Link
-                href="#expertise"
+                href="/#expertise"
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-md hover:bg-blue-50 dark:hover:bg-slate-800"
               >
                 Key Areas of Expertise
               </Link>
               <Link
-                href="#projects"
+                href="/#projects"
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-md hover:bg-blue-50 dark:hover:bg-slate-800"
               >
                 Projects & Work
               </Link>
               <Link
-                href="#impact"
+                href="/#impact"
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-md hover:bg-blue-50 dark:hover:bg-slate-800"
               >
                 Our Impact
               </Link>
               <Link
-                href="#partners"
+                href="/#partners"
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-md hover:bg-blue-50 dark:hover:bg-slate-800"
               >
                 Partners & Collaborators
               </Link>
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-md hover:bg-blue-50 dark:hover:bg-slate-800"
               >

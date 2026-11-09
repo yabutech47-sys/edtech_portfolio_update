@@ -59,10 +59,12 @@ const expertiseAreas = [
     description:
       "Equipping the educational and civil workforce from teachers to institutional leaders with 21st-century leadership and management competencies.",
     courses: [
-      "Over 10,000 professionals trained nationwide",
-      "Co-developed national modules reaching 100,000+ secondary teachers",
-      "Cross-sectoral leadership & data-driven decision-making",
-      "Female School Leaders Capacity Building in Adama",
+      "Teacher Professional Development",
+      "Foundational Literacy and Numeracy",
+      "School Leadership and Management",
+      "Coaching and Communities of Practice",
+      "Digital Competence and AI Integration ",
+      "Institutional Systems Strengthening",
     ],
     photo: "/gallery/hero_photo_26.png",
     photoCaption: "Female School Leaders Capacity Building, Adama Ethiopia",
@@ -103,7 +105,11 @@ const expertiseAreas = [
   },
 ];
 
-export default function CoreInitiatives() {
+export default function CoreInitiatives({
+  onSelectExpertise,
+}: {
+  onSelectExpertise?: (title: string) => void;
+}) {
   return (
     <section id="expertise" className="py-20 sm:py-28 bg-[#f5f8fc] dark:bg-[#09131f] border-b border-slate-200 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,9 +175,15 @@ export default function CoreInitiatives() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-sky-400">
-                  <span>Learn more</span>
-                  <span>→</span>
+                <div className="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                  <button
+                    type="button"
+                    onClick={() => onSelectExpertise?.(area.title)}
+                    className="w-full flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-sky-400 hover:text-blue-700 dark:hover:text-sky-300 transition-colors cursor-pointer group/btn"
+                  >
+                    <span className="group-hover/btn:underline">Learn more</span>
+                    <span className="transition-transform group-hover/btn:translate-x-1">→</span>
+                  </button>
                 </div>
               </div>
             </div>

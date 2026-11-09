@@ -74,10 +74,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
           {/* Left Column: Mission, Value Proposition, Action CTAs */}
           <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/80 dark:bg-blue-950/80 border border-blue-300 dark:border-blue-800 text-[#0f4c81] dark:text-sky-300 text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-sky-400" />
-              <span>Technology in the hands of good teacher transforms education!</span>
-            </div>
+           
 
             {/* Headline */}
             <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.15]">
@@ -89,7 +86,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
 
             {/* Subhead with exact factual content from Company Profile */}
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-              EdTech Hub Ethiopia is a pioneering social enterprise established in 2021. We equip educators, institutions, and learners across Ethiopia with practical, scalable solutions in teacher professional development, digital content, and institutional capacity building.
+             EdTech Hub Ethiopia is an education technology and innovation company, founded in 2021 as a social enterprise. We help strengthen education systems and improve learning outcomes by providing integrated solutions in professional learning, digital content, education technology and research advisory. We work with educators, institutions and learners across Ethiopia to make education technology practical, accessible and impactful. Our aim is to become a leading African education technology company, transforming teaching and learning through solutions that are accessible, scalable and sustainable.
             </p>
 
             {/* CTA Buttons */}

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUs() {
   return (
@@ -24,43 +25,67 @@ export default function AboutUs() {
             </div>
 
             {/* Decorative accent card */}
-            <div className="hidden sm:block absolute -bottom-6 -right-6 bg-gradient-to-br from-[#0f4c81] to-blue-600 text-white p-5 rounded-xl shadow-xl max-w-xs border border-blue-400/30">
-              <span className="text-2xl font-black block">Est. 2021</span>
-              <span className="text-xs text-blue-100 leading-snug block mt-1">
-                Pioneering social enterprise transforming education across Ethiopia
-              </span>
-            </div>
+            
           </div>
 
-          {/* Text Content Directly from PDF */}
+          {/* Text Content Directly from Scope */}
           <div className="lg:col-span-7 space-y-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-[#0f4c81] dark:text-sky-300 text-xs font-bold uppercase tracking-wider border border-blue-200 dark:border-blue-900">
               About Us
             </div>
 
             <h2 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
-              Pioneering Scalable Solutions in Educational Technology
+              Transforming Education Through Technology and Innovation
             </h2>
 
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              <strong>EdTech Hub Ethiopia (EdTech Hub ET)</strong> is a pioneering social enterprise established in 2021 with the mission of transforming education and training through innovative digital technologies. The organization works to strengthen education systems by equipping educators, institutions, and learners with the tools and skills needed to succeed in a rapidly evolving digital learning environment.
+            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              <strong>EdTech Hub ET</strong> is an Ethiopian education-focused social enterprise established in 2020. We develop sustainable, technology-driven solutions that improve the quality, accessibility, and inclusiveness of education.
             </p>
 
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              EdTech Hub ET designs and delivers practical, scalable solutions in educational technology integration, teacher professional development, digital learning content creation, curriculum development, and institutional capacity building.
+            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              We empower teachers, support education institutions, develop inclusive digital learning resources, and promote meaningful technology integration through partnerships with government, development organizations, schools, and communities.
             </p>
 
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              The organization collaborates closely with government institutions, development partners, universities, schools, and civil society organizations to promote innovative and inclusive education practices across Ethiopia.
-            </p>
-
-            <div className="pt-2 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/60 flex items-center justify-center text-blue-600 dark:text-sky-300 font-bold shrink-0">
-                ✓
+            {/* Mini Milestone Preview */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-center">
+                <span className="text-xs font-black text-blue-600 dark:text-sky-400 block font-mono">2020</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-tight block mt-0.5">Foundation</span>
               </div>
-              <p className="text-sm sm:text-base font-semibold text-[#0f4c81] dark:text-sky-300 italic">
-                &ldquo;Technology in the hands of good teacher transforms education!&rdquo;
-              </p>
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-center">
+                <span className="text-xs font-black text-blue-600 dark:text-sky-400 block font-mono">2022</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-tight block mt-0.5">Partnerships</span>
+              </div>
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-center">
+                <span className="text-xs font-black text-blue-600 dark:text-sky-400 block font-mono">2026</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-tight block mt-0.5">Scaling</span>
+              </div>
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-center">
+                <span className="text-xs font-black text-emerald-600 dark:text-emerald-400 block font-mono">Today</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-tight block mt-0.5">Transformation</span>
+              </div>
+            </div>
+
+            {/* "See More" Action Link to Dedicated Page */}
+            <div className="pt-3 flex flex-wrap items-center gap-4">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#0f4c81] hover:bg-[#0a355a] text-white text-sm font-semibold transition-all shadow-sm hover:shadow"
+              >
+                <span>See More & Explore Our Journey</span>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+
+              <a
+                href="/EdTech_Hub_ET_Company_Profile.pdf"
+                download="EdTech_Hub_ET_Company_Profile.pdf"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-blue-600 dark:text-sky-400 hover:underline"
+              >
+                <span>Download Profile PDF</span>
+                <span>↓</span>
+              </a>
             </div>
           </div>
         </div>

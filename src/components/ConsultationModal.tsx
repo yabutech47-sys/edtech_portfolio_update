@@ -154,11 +154,15 @@ export default function ConsultationModal({
                   onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
                   className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
                 >
+                  {defaultProject && (
+                    <option value={defaultProject}>{defaultProject}</option>
+                  )}
                   <option>Teacher Professional Development & EdTech</option>
                   <option>Interactive Digital Course & Textbook Creation</option>
                   <option>Child Protection & Youth Engagement</option>
                   <option>Custom LMS & Digital Systems</option>
                   <option>Institutional Capacity Building</option>
+                  <option>Educational Media Production & Design</option>
                   <option>General Partnership / Other</option>
                 </select>
               </div>
