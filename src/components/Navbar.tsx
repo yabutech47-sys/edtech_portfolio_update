@@ -85,7 +85,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             {/* Desktop Navigation Links - Compact & Clean Single Line */}
             <nav className="hidden lg:flex items-center gap-6 xl:gap-8 font-medium text-sm text-slate-700 dark:text-slate-200">
               <Link
-                href="/about"
+                href="/#aboutus"
                 className="hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
               >
                 About Us
